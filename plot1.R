@@ -1,5 +1,12 @@
-# This is a test
-data = read.csv("ExpDataAnAssign1/dataFeb1-2.txt")
+# Read the data from the csv
+names = read.csv("household_power_consumption.txt", sep = ";", nrows=1)
+data = read.csv("household_power_consumption.txt",
+                sep = ";",
+                skip=66636,
+                nrows=2880,
+                col.names=colnames(names)
+    )
+# Make the plot
 hist(data$Global_active_power,
      main="Global Active Power",
      xlab="Global Active Power (kilowatts)",
